@@ -272,7 +272,7 @@ export function App() {
             <div className="z-10 my-auto py-1 relative">
               <div className="w-36 h-36 mx-auto bg-white/90 border-3 border-black rounded-2xl p-2 flex items-center justify-center shadow-[4px_4px_0px_#38bdf8]">
                 <div className="animate-bounce text-6xl drop-shadow-[2px_4px_0_rgba(56,189,248,0.3)]">
-                  {currentStage === 'EGG' ? '🥚' : currentStage === 'BABY' ? '🐤' : currentStage === 'PET' ? '🐶' : '👑'}
+                  🥚
                 </div>
               </div>
               <span className="absolute top-1 right-1/3 text-2xl animate-ping">✨</span>
