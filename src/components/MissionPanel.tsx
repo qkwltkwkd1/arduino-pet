@@ -68,9 +68,9 @@ export const MissionPanel: React.FC<MissionPanelProps> = ({
     const isFailed = status === 'failed';
 
     return (
-      <div className="rpg-dialogue-box p-3.5 sm:p-4 rounded-2xl font-pixel text-slate-900 flex-1 flex flex-col justify-between min-h-0">
+      <div className="rpg-dialogue-box p-4 rounded-2xl font-pixel text-slate-900 flex-1 flex flex-col justify-between min-h-0">
         {/* Dialogue Header */}
-        <div className="flex justify-between items-center bg-sky-100 border-2 border-black rounded-xl px-3 py-1.5 mb-2.5">
+        <div className="flex justify-between items-center bg-sky-100 border-2 border-black rounded-xl px-3.5 py-2 mb-2">
           <span className="text-sky-950 text-xs font-bold flex items-center gap-1.5">
             <span>🍃</span>
             <span>{mission.title}</span>
@@ -80,23 +80,24 @@ export const MissionPanel: React.FC<MissionPanelProps> = ({
           </span>
         </div>
 
+        {/* Center Dialogue Message Body with Symmetric Equal Padding (py-6 my-auto) */}
         {!isCompleted && !isFailed && (
-          <div className="space-y-3 flex-1 flex flex-col justify-between min-h-0">
-            <div className="bg-white border-2 border-black p-3 rounded-xl space-y-1 shadow-[2px_2px_0px_#38bdf8]">
-              <span className="text-[10px] text-sky-600 font-bold block flex items-center gap-1">
+          <div className="flex-1 flex flex-col justify-center space-y-3 my-auto py-2">
+            <div className="bg-white border-2 border-black p-3.5 rounded-xl space-y-1.5 shadow-[2px_2px_0px_#38bdf8]">
+              <span className="text-[10px] text-sky-600 font-bold flex items-center gap-1">
                 <span>💬</span>
                 <span>ACTION GUIDE</span>
               </span>
-              <p className="text-xs text-slate-900 leading-relaxed font-bold">
+              <p className="text-xs sm:text-sm text-slate-900 leading-relaxed font-bold">
                 "{getFeedbackMessage(lastFeedback)}"
               </p>
             </div>
 
-            <div className="bg-sky-50 border-2 border-black p-2.5 rounded-xl text-center shadow-[2px_2px_0px_#38bdf8]">
+            <div className="bg-sky-50 border-2 border-black p-3 rounded-xl text-center shadow-[2px_2px_0px_#38bdf8]">
               <div className="text-[10px] text-sky-700 font-bold mb-1">PROGRESS</div>
               <div className="flex justify-center items-center gap-2">
                 {Array.from({ length: targetCount }, (_, i) => (
-                  <PixelHeart key={i} size={18} filled={i < currentCount} color="#f43f5e" />
+                  <PixelHeart key={i} size={20} filled={i < currentCount} color="#f43f5e" />
                 ))}
                 <span className="text-xs text-sky-800 font-bold ml-1">({currentCount} / {targetCount})</span>
               </div>
@@ -124,15 +125,16 @@ export const MissionPanel: React.FC<MissionPanelProps> = ({
           </div>
         )}
 
+        {/* MISSION CLEAR PANEL (Symmetric Equal Top & Bottom Padding py-6 my-auto) */}
         {isCompleted && (
-          <div className="text-center space-y-2 py-4 animate-bounce">
-            <div className="text-2xl text-sky-600 font-bold tracking-wider">
+          <div className="flex-1 flex flex-col justify-center items-center text-center space-y-3 py-6 my-auto">
+            <div className="text-2xl sm:text-3xl text-sky-600 font-bold tracking-wider animate-bounce">
               🌟 MISSION CLEAR! 🌟
             </div>
             <p className="text-emerald-700 text-xs sm:text-sm font-bold">
-              경험치 <span className="text-pink-600 font-bold text-base">+{mission.rewards.exp} EXP</span> 획득!
+              경험치 <span className="text-pink-600 font-bold text-base sm:text-lg">+{mission.rewards.exp} EXP</span> 획득!
             </p>
-            <div className="flex justify-center pt-2">
+            <div className="pt-2">
               <PixelButton variant="ac-cream" size="md" onClick={onCancelMission}>
                 확인 (CONTINUE)
               </PixelButton>
@@ -140,12 +142,13 @@ export const MissionPanel: React.FC<MissionPanelProps> = ({
           </div>
         )}
 
+        {/* MISSION FAILED PANEL (Symmetric Equal Top & Bottom Padding py-6 my-auto) */}
         {isFailed && (
-          <div className="text-center space-y-2 py-3">
-            <div className="text-xl text-rose-600 font-bold tracking-wider">
+          <div className="flex-1 flex flex-col justify-center items-center text-center space-y-3 py-6 my-auto">
+            <div className="text-xl sm:text-2xl text-rose-600 font-bold tracking-wider">
               💀 MISSION FAILED 💀
             </div>
-            <p className="text-xs text-slate-700">
+            <p className="text-xs sm:text-sm text-slate-700">
               이유: <span className="text-rose-600 font-bold">{getFeedbackMessage(failReason)}</span>
             </p>
             <div className="flex justify-center gap-2 pt-2">
@@ -162,7 +165,7 @@ export const MissionPanel: React.FC<MissionPanelProps> = ({
     );
   }
 
-  // MISSION SELECTION LIST (Immaculate card padding & smooth scrolling)
+  // MISSION SELECTION LIST
   return (
     <div className="bg-[#fffefb] border-3 border-black p-3.5 sm:p-4 rounded-2xl shadow-[4px_4px_0px_#38bdf8] font-pixel flex-1 flex flex-col justify-between min-h-0">
       <div className="flex justify-between items-center border-b-2 border-sky-200 pb-2 mb-2.5">

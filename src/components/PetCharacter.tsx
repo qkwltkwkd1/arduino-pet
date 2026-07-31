@@ -174,29 +174,54 @@ export const PetCharacter: React.FC<PetCharacterProps> = ({
       case 'SUPER_PET':
       default:
         return (
+          /* Stage 4 Final Evolution (Pachirisu & Mew Inspired Fluffy Electric Mythical Pet - NO CROWN) */
           <div className={`relative w-44 h-48 flex items-center justify-center ${animClass}`}>
-            <div className="absolute inset-0 bg-sky-300/50 rounded-full blur-xl animate-pulse" />
+            {/* Glowing Mystic Electric Blue Aura */}
+            <div className="absolute inset-0 bg-sky-300/60 rounded-full blur-xl animate-pulse" />
 
-            <svg viewBox="0 0 28 28" className="w-full h-full drop-shadow-[8px_10px_0px_rgba(56,189,248,0.5)] [image-rendering:pixelated]">
-              <path d="M10,1 L12,4 L14,1 L16,4 L18,1 L18,5 L10,5 Z" fill="#facc15" stroke="#000" strokeWidth="0.8" />
-              <path d="M1,8 C1,5 6,5 6,10 L6,14 L1,12 Z" fill="#bae6fd" stroke="#000" strokeWidth="0.8" />
-              <path d="M27,8 C27,5 22,5 22,10 L22,14 L27,12 Z" fill="#bae6fd" stroke="#000" strokeWidth="0.8" />
-              <path d="M6,6 H22 V18 H19 V22 H16 V18 H12 V22 H9 V18 H6 Z" fill="#38bdf8" stroke="#000" strokeWidth="0.8" />
-              <polygon points="14,11 16,13 14,15 12,13" fill="#f472b6" stroke="#000" strokeWidth="0.5" />
+            <svg viewBox="0 0 32 32" className="w-full h-full drop-shadow-[8px_10px_0px_rgba(56,189,248,0.5)] [image-rendering:pixelated]">
+              {/* Fluffy Electric Tail (Pachirisu Style) */}
+              <path d="M20,6 C26,2 30,8 28,14 C26,20 22,24 18,24 L18,18 C22,18 24,14 24,10 C24,8 22,8 20,6 Z" fill="#38bdf8" stroke="#000" strokeWidth="0.8" />
+              <path d="M22,8 C25,5 28,9 26,13 C25,16 22,18 20,18 Z" fill="#ffffff" />
+              
+              {/* Ears (Mew & Pachirisu pointed ears) */}
+              <path d="M6,3 L10,3 L9,10 L5,10 Z" fill="#38bdf8" stroke="#000" strokeWidth="0.8" />
+              <path d="M7,5 L9,5 L8,9 L6,9 Z" fill="#bae6fd" />
+              <path d="M16,3 L20,3 L21,10 L17,10 Z" fill="#38bdf8" stroke="#000" strokeWidth="0.8" />
+              <path d="M17,5 L19,5 L20,9 L18,9 Z" fill="#bae6fd" />
+
+              {/* Head & Body */}
+              <path d="M5,8 H21 V22 H18 V26 H15 V22 H11 V26 H8 V22 H5 Z" fill="#ffffff" stroke="#000" strokeWidth="0.8" />
+              
+              {/* Soft Sky Blue Body Markings */}
+              <path d="M10,8 H16 V16 H10 Z" fill="#e0f2fe" />
+              <path d="M7,16 H19 V21 H7 Z" fill="#ffffff" stroke="#000" strokeWidth="0.6" />
+
+              {/* Yellow Electric Cheek Pouches (Pachirisu style) */}
+              <rect x="5" y="14" width="3" height="3" fill="#facc15" stroke="#000" strokeWidth="0.5" />
+              <rect x="18" y="14" width="3" height="3" fill="#facc15" stroke="#000" strokeWidth="0.5" />
+
+              {/* Arms */}
+              <rect x="3" y="14" width="2" height="4" fill="#ffffff" stroke="#000" strokeWidth="0.6" />
+              <rect x="21" y="14" width="2" height="4" fill="#ffffff" stroke="#000" strokeWidth="0.6" />
+
+              {/* Eyes */}
               {status === 'sleeping' ? (
                 <>
-                  <path d="M8,9 H11" stroke="#000" strokeWidth="1" />
-                  <path d="M17,9 H20" stroke="#000" strokeWidth="1" />
+                  <path d="M8,11 H11" stroke="#000" strokeWidth="1" />
+                  <path d="M15,11 H18" stroke="#000" strokeWidth="1" />
                 </>
               ) : (
                 <>
-                  <rect x="8" y="8" width="3" height="3" fill="#000" />
-                  <rect x="9" y="8" width="1" height="1" fill="#fff" />
-                  <rect x="17" y="8" width="3" height="3" fill="#000" />
-                  <rect x="18" y="8" width="1" height="1" fill="#fff" />
+                  <rect x="8" y="10" width="3" height="4" fill="#000" />
+                  <rect x="9" y="10" width="1" height="2" fill="#fff" />
+                  <rect x="15" y="10" width="3" height="4" fill="#000" />
+                  <rect x="16" y="10" width="1" height="2" fill="#fff" />
                 </>
               )}
-              <path d="M12,14 Q14,16 16,14" fill="none" stroke="#000" strokeWidth="0.8" />
+
+              {/* Smile Mouth */}
+              <path d="M12,16 Q13,18 14,16" fill="none" stroke="#000" strokeWidth="0.8" />
             </svg>
           </div>
         );
